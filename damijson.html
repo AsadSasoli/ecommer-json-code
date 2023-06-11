@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .con{
+        width: 100vw;
+        height: 100vh;
+    }
+    .car{
+        width: 250px;
+        height: 350px;
+        border: 2px solid;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="con">
+        <div class="datalist" id="datalist">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // var dat = data.products
+    fetch("https://dummyjson.com/products")
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+        document.write(data.products[0].title)
+    })
+</script>
