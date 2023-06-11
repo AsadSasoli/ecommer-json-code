@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .box{
+        width: 300px;
+        height: 300px;
+        border: 2px solid;
+        margin-top: 50px;
+        margin-left: 50px;
+        float: left;
+    }
+    .box img{
+        width: 220px;
+    }
+    .box a,
+    section button{
+        width: 150px;
+        height: 50px;
+        background: rgb(11, 75, 158);
+        color: aliceblue;
+    }
+    section button{
+        width: 120px;
+    }
+    section input{
+        width: 300px;
+        height: 40px;
+        margin-left:200px;
+    }
+</style>
+<body>
+    <section>
+        <input type="text" placeholder="Search" id="search"> 
+        <button onclick="bubt()">Search</button>
+    </section>
+    <div class="data"  id="data">
+    </div>
+</body>
+</html>
+<script src="api.js"></script>
+<script>
+    for(a=0;a<project.length;a++){
+        document.getElementById('data').innerHTML+=`
+        <div class="box">
+            <img src="${project[a].image}">
+            <h1>${project[a].name}</h1>
+            <h2>${project[a].cetagry}</h2>
+            <a href="detail.html?umar=${project[a].id}">bay now</a>
+            </div>
+            
+            `
+        }
+    function bubt(){
+        document.getElementById('data').innerHTML=''
+        var search = document.getElementById('search').value
+        for(a=0;a<project.length;a++){
+            if (project[a].cetagry.toLowerCase()==search.toLowerCase()) {
+            document.getElementById('data').innerHTML+=`
+            <div class="box">
+                <img src="${project[a].image}">
+                <h1>${project[a].name}</h1>
+                <h2>${project[a].cetagry}</h2>
+                <a href="">bay now</a>
+            </div>
+        
+        `   
+            }else{
+
+            }
+    }
+    }
+</script>
